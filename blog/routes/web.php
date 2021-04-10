@@ -16,10 +16,12 @@
 // });
 
 Route::get('/', 'PostController@index');
-
 Route::get('/posts/create', 'PostController@create');
-
+Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
 // なんか知らんけど、Route::get('/posts/{post}', 'PostController@show');
 // の/posts/{post}の{}があいまいらしい。数字でも文字列でも{}以降は判別しないらしい
 // だからとりあえず一番最後に書いてくださいとのこと。
